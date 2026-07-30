@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "author": "Luiz Felipe Cassani",
+  "editor": "wokwi",
+  "parts": [
+    { "id": "uno", "type": "wokwi-arduino-uno", "top": 0, "left": 0 },
+
+    { "id": "btnStart", "type": "wokwi-pushbutton", "top": -80, "left": -260, "attrs": { "color": "green" } },
+    { "id": "btnStop", "type": "wokwi-pushbutton", "top": -20, "left": -260, "attrs": { "color": "red" } },
+    { "id": "btnEmergencia", "type": "wokwi-pushbutton", "top": 40, "left": -260, "attrs": { "color": "red" } },
+    { "id": "btnSensor", "type": "wokwi-pushbutton", "top": 100, "left": -260, "attrs": { "color": "blue" } },
+    { "id": "btnReset", "type": "wokwi-pushbutton", "top": 160, "left": -260, "attrs": { "color": "yellow" } },
+
+    { "id": "rAtuador", "type": "wokwi-resistor", "top": -80, "left": 280, "attrs": { "value": "220" } },
+    { "id": "ledAtuador", "type": "wokwi-led", "top": -85, "left": 340, "attrs": { "color": "white", "label": "atuador" } },
+
+    { "id": "rVerde", "type": "wokwi-resistor", "top": -20, "left": 280, "attrs": { "value": "220" } },
+    { "id": "ledVerde", "type": "wokwi-led", "top": -25, "left": 340, "attrs": { "color": "green" } },
+
+    { "id": "rAmarelo", "type": "wokwi-resistor", "top": 40, "left": 280, "attrs": { "value": "220" } },
+    { "id": "ledAmarelo", "type": "wokwi-led", "top": 35, "left": 340, "attrs": { "color": "yellow" } },
+
+    { "id": "rVermelho", "type": "wokwi-resistor", "top": 100, "left": 280, "attrs": { "value": "220" } },
+    { "id": "ledVermelho", "type": "wokwi-led", "top": 95, "left": 340, "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    ["uno:2", "btnStart:1.r", "green", ["v0"]],
+    ["btnStart:2.r", "uno:GND.1", "black", ["v0"]],
+
+    ["uno:3", "btnStop:1.r", "red", ["v0"]],
+    ["btnStop:2.r", "uno:GND.1", "black", ["v0"]],
+
+    ["uno:4", "btnEmergencia:1.r", "red", ["v0"]],
+    ["btnEmergencia:2.r", "uno:GND.1", "black", ["v0"]],
+
+    ["uno:5", "btnSensor:1.r", "blue", ["v0"]],
+    ["btnSensor:2.r", "uno:GND.2", "black", ["v0"]],
+
+    ["uno:6", "btnReset:1.r", "yellow", ["v0"]],
+    ["btnReset:2.r", "uno:GND.2", "black", ["v0"]],
+
+    ["uno:8", "rAtuador:1", "white", ["v0"]],
+    ["rAtuador:2", "ledAtuador:A", "white", ["v0"]],
+    ["ledAtuador:C", "uno:GND.3", "black", ["v0"]],
+
+    ["uno:9", "rVerde:1", "green", ["v0"]],
+    ["rVerde:2", "ledVerde:A", "green", ["v0"]],
+    ["ledVerde:C", "uno:GND.3", "black", ["v0"]],
+
+    ["uno:10", "rAmarelo:1", "yellow", ["v0"]],
+    ["rAmarelo:2", "ledAmarelo:A", "yellow", ["v0"]],
+    ["ledAmarelo:C", "uno:GND.3", "black", ["v0"]],
+
+    ["uno:11", "rVermelho:1", "red", ["v0"]],
+    ["rVermelho:2", "ledVermelho:A", "red", ["v0"]],
+    ["ledVermelho:C", "uno:GND.3", "black", ["v0"]]
+  ]
+}
